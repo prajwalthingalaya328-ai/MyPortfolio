@@ -1713,6 +1713,352 @@
   }
 }
 
+/* Compact inner-page refinement. These caps intentionally exclude Home. */
+html,
+body,
+#root {
+  max-width: 100%;
+}
+
+.page-content.page-about,
+.page-content.page-skills,
+.page-content.page-projects,
+.page-content.page-certifications,
+.page-content.page-education,
+.page-content.page-contact {
+  max-width: 100%;
+  overflow-x: clip;
+  letter-spacing: 0;
+  word-spacing: normal;
+}
+
+.page-content.page-about .page-frame,
+.page-content.page-skills .page-frame,
+.page-content.page-projects .page-frame,
+.page-content.page-certifications .page-frame,
+.page-content.page-education .page-frame,
+.page-content.page-contact .page-frame {
+  min-height: calc(100vh - 126px);
+  height: auto;
+  overflow: visible;
+  padding-top: 112px;
+  padding-bottom: 72px;
+}
+
+.page-content.page-about .about-resume-hero {
+  min-height: 0;
+  padding: 28px 0 48px;
+}
+
+.page-content.page-about .about-hero-copy h1 {
+  max-width: 680px;
+  margin: 18px 0 24px;
+  font-size: clamp(30px, 3.5vw, 46px);
+  font-weight: 650;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+}
+
+.page-content.page-about .about-hero-copy h1 span {
+  display: inline;
+}
+
+.page-content.page-about .about-lead,
+.page-content.page-about .about-reveal-lead {
+  max-width: 680px;
+  font-size: clamp(15px, 1.2vw, 17px);
+  line-height: 1.72;
+  letter-spacing: 0;
+}
+
+.page-content.page-about .about-hero-aside {
+  font-size: 13px;
+  letter-spacing: 0;
+}
+
+.page-content.page-about .about-index {
+  margin-top: 32px;
+}
+
+.page-content.page-about .about-accordion-trigger {
+  min-height: 0;
+  padding-block: 26px;
+}
+
+.page-content.page-about .about-accordion-heading strong {
+  font-size: clamp(20px, 2.2vw, 26px);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+}
+
+.page-content.page-about .about-accordion-heading small {
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.page-content.page-about .about-accordion-inner {
+  padding-top: 20px;
+}
+
+.page-content.page-about .about-accordion-inner > h2 {
+  margin: 0 0 20px;
+  font-size: clamp(24px, 2.5vw, 32px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.page-content.page-about .about-accordion-inner p,
+.page-content.page-about .about-accordion-inner dd,
+.page-content.page-about .about-accordion-inner li {
+  font-size: clamp(15px, 1.1vw, 17px);
+  line-height: 1.72;
+  letter-spacing: 0;
+}
+
+.page-content.page-skills .lab-header h1 {
+  max-width: 680px;
+  margin: 20px 0 24px;
+  font-size: clamp(30px, 4vw, 52px);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+}
+
+.page-content.page-skills .lab-scene {
+  min-height: 540px;
+  margin-top: 32px;
+}
+
+.page-content.page-skills .lab-display {
+  min-height: 540px;
+}
+
+.page-content.page-skills .lab-core {
+  width: min(280px, 34vw);
+}
+
+.page-content.page-skills .lab-core h2 {
+  font-size: clamp(22px, 2.5vw, 30px);
+  letter-spacing: -0.02em;
+}
+
+.page-content.page-skills .lab-module {
+  width: 128px;
+  height: 94px;
+}
+
+.page-content.page-skills .lab-module span {
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+
+.page-content.page-skills .lab-module small,
+.page-content.page-skills .lab-readout span,
+.page-content.page-skills .lab-readout small {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+
+.page-content.page-projects .case-study-header {
+  min-height: 0;
+  padding: 28px 0 48px;
+}
+
+.page-content.page-projects .case-study-header h1 {
+  max-width: 760px;
+  margin: 20px 0 28px;
+  font-size: clamp(32px, 4.5vw, 56px);
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+}
+
+.page-content.page-projects .case-study-header p,
+.page-content.page-projects .case-study-main p,
+.page-content.page-projects .case-study-detail-block p,
+.page-content.page-projects .case-study-detail-block li {
+  font-size: clamp(15px, 1.2vw, 17px);
+  line-height: 1.72;
+  letter-spacing: 0;
+}
+
+.page-content.page-projects .case-study-list {
+  margin-top: 40px;
+}
+
+.page-content.page-projects .case-study-summary {
+  padding-block: 48px;
+}
+
+.page-content.page-projects .case-study-main h2 {
+  max-width: 660px;
+  margin-bottom: 18px;
+  font-size: clamp(28px, 3.2vw, 44px);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+}
+
+.page-content.page-projects .case-study-category,
+.page-content.page-projects .case-study-number,
+.page-content.page-projects .case-study-tech span,
+.page-content.page-projects .case-study-actions button,
+.page-content.page-projects .case-study-actions a {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+}
+
+.page-content.page-projects .case-study-detail-heading h2 {
+  font-size: clamp(24px, 2.5vw, 32px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.page-content.page-certifications .page-heading h1,
+.page-content.page-education .education-header h1 {
+  margin-bottom: 24px;
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+}
+
+.page-content.page-certifications .page-heading p,
+.page-content.page-education .journey-panel p,
+.page-content.page-education .detail-grid strong {
+  font-size: clamp(15px, 1.1vw, 17px);
+  line-height: 1.72;
+  letter-spacing: 0;
+}
+
+.page-content.page-certifications .page-heading {
+  margin-bottom: 48px;
+}
+
+.page-content.page-certifications .gateway-copy strong {
+  font-size: clamp(26px, 3vw, 34px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.page-content.page-certifications .gateway-copy small,
+.page-content.page-certifications .provider-gateway > i {
+  font-size: 12px;
+}
+
+.page-content.page-education .education-header h1 {
+  margin-bottom: 22px;
+  font-size: clamp(32px, 4vw, 52px);
+}
+
+.page-content.page-education .timeline-shell {
+  margin-top: 44px;
+}
+
+.page-content.page-education .timeline-node {
+  min-height: 112px;
+  padding-block: 20px;
+}
+
+.page-content.page-education .timeline-node strong {
+  font-size: 22px;
+  line-height: 1.2;
+}
+
+.page-content.page-education .timeline-node small,
+.page-content.page-education .timeline-node em,
+.page-content.page-education .education-meta {
+  font-size: 12px;
+}
+
+.page-content.page-contact .contact-directory-header {
+  min-height: 0;
+  padding: 28px 0 48px;
+}
+
+.page-content.page-contact .contact-directory-header h1 {
+  margin: 20px 0 28px;
+  font-size: clamp(32px, 4.5vw, 52px);
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+}
+
+.page-content.page-contact .contact-directory-header p {
+  max-width: 680px;
+  font-size: clamp(15px, 1.2vw, 17px);
+  line-height: 1.72;
+}
+
+.page-content.page-contact .contact-directory-list {
+  margin-top: 40px;
+}
+
+.page-content.page-contact .contact-directory-row {
+  min-height: 0;
+  padding-block: 30px;
+}
+
+.page-content.page-contact .contact-directory-main strong {
+  max-width: 680px;
+  font-size: clamp(16px, 1.7vw, 22px);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.page-content.page-contact .contact-directory-main > span,
+.page-content.page-contact .contact-directory-action a,
+.page-content.page-contact .contact-directory-action button {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+}
+
+@media (max-width: 700px) {
+  .page-content.page-about .about-hero-copy h1 {
+    font-size: clamp(28px, 8vw, 36px);
+  }
+
+  .page-content.page-about .about-resume-hero,
+  .page-content.page-projects .case-study-header,
+  .page-content.page-contact .contact-directory-header {
+    padding-top: 20px;
+    padding-bottom: 36px;
+  }
+
+  .page-content.page-skills .lab-scene,
+  .page-content.page-skills .lab-display {
+    min-height: 620px;
+  }
+
+  .page-content.page-skills .lab-core {
+    width: min(220px, 58vw);
+  }
+
+  .page-content.page-skills .lab-module {
+    width: 108px;
+    height: 84px;
+  }
+
+  .page-content.page-projects .case-study-summary {
+    padding-block: 36px;
+  }
+
+  .page-content.page-projects .case-study-main h2 {
+    font-size: clamp(28px, 9vw, 40px);
+  }
+
+  .page-content.page-contact .contact-directory-row {
+    padding-block: 24px;
+  }
+}
+
+@media (max-width: 420px) {
+  .page-content.page-about .about-accordion-inner,
+  .page-content.page-projects .case-study-detail-inner {
+    padding-left: 0;
+  }
+
+  .page-content.page-contact .contact-directory-row {
+    grid-template-columns: 28px 32px minmax(0, 1fr);
+    gap: 8px;
+  }
+}
+
 /* Shared inner-page type and rhythm. Home remains intentionally outside this scope. */
 .page-content.page-about,
 .page-content.page-skills,
