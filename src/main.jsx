@@ -11,6 +11,9 @@ import './spacing.css';
 import './premium-home.css';
 import './certifications.css';
 import './secondary-pages.css';
+import './about-skills.css';
+import './command-constellation.css';
+import './skill-arcade.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
