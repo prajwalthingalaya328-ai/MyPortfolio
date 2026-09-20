@@ -1,0 +1,24 @@
+:root { --space-xs: 6px; --space-sm: 10px; --space-md: 16px; --space-lg: 24px; --space-xl: 32px; --space-2xl: 48px; }
+
+body { line-height: 1.6; }
+h1, h2, h3 { line-height: 1.08; }
+h1 { margin-bottom: var(--space-md); }
+h2 { margin-bottom: 12px; }
+p { line-height: 1.65; }
+.nav-inner { gap: var(--space-xl); }.nav-links { gap: 23px; }.nav-links a { padding-block: 4px; }.nav-social { padding: 10px 14px !important; }
+.button { min-height: 48px; padding: 12px 20px; }.actions { gap: var(--space-md); margin-top: var(--space-xl); }.text-link { gap: var(--space-sm); }
+.page-heading { margin-bottom: 28px; }.page-heading h1 { margin-top: 16px; margin-bottom: 16px; }.page-heading p { line-height: 1.65; }
+.screen-stage { min-height: 340px; height: calc(100svh - 368px); }.interactive-card-grid { gap: var(--space-lg); }.reveal-card { padding: var(--space-lg); }.reveal-card small { margin-top: var(--space-sm); }.reveal-card strong { margin-top: var(--space-sm); line-height: 1.2; }
+.skill-node { padding: 13px 16px; }.skill-node small { margin-top: var(--space-xs); }.skill-core span { margin-top: var(--space-sm); }
+.project-stage { gap: 58px; padding: 44px; }.project-stage-copy h2 { margin-top: 16px; margin-bottom: 24px; line-height: 1.08; }.project-stage-copy .tags { margin-bottom: 30px; }.tags { gap: var(--space-sm); }.tags span { padding: 7px 10px; }.project-stage-visual { min-height: 290px; }
+.cert-stage { gap: var(--space-xl); }.cert-node { min-height: 150px; padding: var(--space-lg); }.cert-node strong { margin: var(--space-sm) 0; line-height: 1.2; }
+.education-stage { gap: 96px; padding: 32px 10%; }.education-node { gap: var(--space-sm); }.education-copy h2 { margin-top: 16px; margin-bottom: 16px; }.education-copy p { margin-bottom: var(--space-md); }
+.career-stage { gap: var(--space-lg); }.career-node { min-height: 235px; padding: var(--space-lg); }.career-node strong { margin-top: var(--space-md); line-height: 1.15; }.career-node i { top: var(--space-lg); right: var(--space-lg); }
+.github-stage { gap: 64px; padding: 56px 13%; }.github-stage-copy h2 { margin-top: 18px; margin-bottom: 14px; }.github-stage-copy p { margin-bottom: 30px; line-height: 1.6; }
+.contact-stage { gap: var(--space-lg); }.contact-choice { min-height: 205px; padding: var(--space-xl); }.contact-choice strong { margin-top: var(--space-md); line-height: 1.15; }
+.detail-panel { padding: 40px; }.detail-panel h2 { margin-top: 18px; margin-bottom: 24px; }.detail-body { line-height: 1.65; }.detail-body p { margin-bottom: var(--space-lg); }.detail-tags { gap: var(--space-sm); margin-top: var(--space-xl); }.detail-tags span { padding: 7px 10px; }.compact-form { gap: var(--space-lg); }.compact-form label { line-height: 1.5; }.compact-form input, .compact-form textarea { margin-top: var(--space-sm); padding: 12px; }.compact-form textarea { min-height: 100px; }
+.home-copy h1 { margin-top: 18px; margin-bottom: 25px; line-height: .88; }.home-role { margin-bottom: var(--space-lg); line-height: 1.7; }.home-description { margin-bottom: var(--space-lg); line-height: 1.65; }.home-statement { margin-bottom: 28px; }.home-socials { gap: var(--space-lg); margin-top: var(--space-lg); }.orbit-status { line-height: 2; }
+.footer-main { gap: var(--space-2xl); }.footer-links { gap: var(--space-lg); }.footer-bottom { padding-top: 28px; }
+
+@media (max-width: 900px) { .nav-links { gap: 16px; }.home-identity-inner { gap: 40px; }.project-stage { gap: 40px; padding: 36px; }.education-stage { gap: 55px; }.github-stage { gap: 42px; padding-inline: 10%; } }
+@media (max-width: 700px) { .nav-inner { gap: var(--space-lg); }.nav-links a { padding: 11px 10px; }.nav-social { margin: 8px 0 !important; }.page-heading { margin-bottom: 28px; }.page-heading h1 { margin-bottom: 14px; }.screen-stage { min-height: 390px; }.interactive-card-grid { gap: var(--space-sm); }.reveal-card { padding: var(--space-md); }.project-stage, .github-stage, .education-stage { gap: var(--space-xl); padding: 32px 22px; }.project-stage-copy h2 { margin-bottom: 20px; }.project-stage-copy .tags { margin-bottom: 24px; }.cert-stage { gap: var(--space-md); }.cert-node { min-height: 118px; padding: var(--space-md); }.career-stage { gap: var(--space-sm); }.career-node { min-height: 165px; padding: var(--space-md); }.contact-stage { gap: var(--space-sm); }.contact-choice { min-height: 150px; padding: var(--space-md); }.detail-panel { padding: 32px 24px; }.detail-panel h2 { margin-bottom: 20px; }.home-copy h1 { margin-bottom: 21px; }.home-role { margin-bottom: var(--space-md); }.home-description { margin-bottom: var(--space-md); }.home-statement { margin-bottom: 22px; }.home-socials { gap: var(--space-md); margin-top: var(--space-md); } }

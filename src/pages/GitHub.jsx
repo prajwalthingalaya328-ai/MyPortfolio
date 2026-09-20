@@ -1,0 +1,4 @@
+import PageFrame from '../components/PageFrame';
+import { portfolioData } from '../data/portfolioData';
+
+export default function GitHub() { return <PageFrame eyebrow="08 / open source" title={<>EXPLORE MY <em>CODE.</em></>} intro="A direct link to the public profile. No invented statistics, just the source." ><div className="github-stage screen-stage"><div className="github-glyph">{`{ }`}</div><div className="github-stage-copy"><div className="panel-label">GitHub developer profile</div><h2>Prajwal N Thingalaya</h2><p>github.com/prajwalthingalaya328-ai</p><a className="button button-solid" data-cursor="CODE" href={portfolioData.github} target="_blank" rel="noreferrer">OPEN GITHUB ↗</a></div><div className="branch branch-a"><i /><i /><i /></div><div className="branch branch-b"><i /><i /></div></div></PageFrame>; }
