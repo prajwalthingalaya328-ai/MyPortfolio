@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import PageFrame from '../components/PageFrame';
-import DetailPanel from '../components/DetailPanel';
 import { portfolioData } from '../data/portfolioData';
 
 export default function Education() { const [open, setOpen] = useState('2025'); const entries = [{ year: '2025', title: portfolioData.degree, place: portfolioData.university, detail: portfolioData.period }, { year: '2026', title: portfolioData.year, place: 'Currently pursuing B.Tech CSE', detail: 'Academic journey in progress' }]; return <PageFrame eyebrow="06 / academic journey" title={<>ACADEMIC <em>JOURNEY</em></>} intro="Two points in an ongoing timeline. Select a year to reveal its context."><section className="journey-stage secondary-stage"><div className="journey-track" />{entries.map((entry) => <button className={`journey-point ${open === entry.year ? 'is-selected' : ''}`} data-cursor="VIEW" key={entry.year} onClick={() => setOpen(entry.year)}><span>{entry.year}</span><div><strong>{entry.title}</strong><small>{entry.place}</small><em>{open === entry.year ? entry.detail : 'SELECT NODE'}</em></div></button>)}</section></PageFrame>; }

@@ -3,12 +3,12 @@ import PageFrame from '../components/PageFrame';
 import DetailPanel from '../components/DetailPanel';
 
 const items = [
-	{ name: 'C', level: 'Good', type: 'Programming skill', detail: 'Good knowledge of C.' },
-	{ name: 'PYTHON', level: 'Basic', type: 'Programming skill', detail: 'Basic knowledge of Python.' },
-	{ name: 'WEB', level: 'Interest', type: 'Learning area', detail: 'Web Development.' },
-	{ name: 'AI', level: 'Interest', type: 'Learning area', detail: 'Artificial Intelligence.' },
-	{ name: 'PROJECTS', level: 'Interest', type: 'Learning area', detail: 'Project Development.' },
-	{ name: 'PROGRAMMING', level: 'Interest', type: 'Core interest', detail: 'Programming.' },
+	{ name: 'C', level: 'Good', type: 'Programming skill', detail: 'Good knowledge of C programming fundamentals, with more learning ahead.' },
+	{ name: 'PYTHON', level: 'Basic', type: 'Programming skill', detail: 'Basic knowledge of Python programming fundamentals, with more learning ahead.' },
+	{ name: 'WEB', level: 'Interest', type: 'Learning area', detail: "An active area of curiosity in Prajwal's computer science journey: Web Development." },
+	{ name: 'AI', level: 'Interest', type: 'Learning area', detail: "An active area of curiosity in Prajwal's computer science journey: Artificial Intelligence." },
+	{ name: 'PROJECTS', level: 'Interest', type: 'Learning area', detail: "An active area of curiosity in Prajwal's computer science journey: Project Development." },
+	{ name: 'PROGRAMMING', level: 'Interest', type: 'Core interest', detail: "An active area of curiosity in Prajwal's computer science journey: Programming." },
 ];
 
 export default function Skills() {

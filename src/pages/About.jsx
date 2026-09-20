@@ -3,10 +3,11 @@ import PageFrame from '../components/PageFrame';
 import DetailPanel from '../components/DetailPanel';
 
 const identityNodes = [
-	{ key: 'who', label: 'WHO I AM', value: 'B.Tech CSE student', detail: 'B.Tech Computer Science and Engineering student focused on learning, building, and exploring technology.' },
+	{ key: 'who', label: 'WHO I AM', value: 'B.Tech CSE student', detail: 'I am Prajwal N Thingalaya, a second-year B.Tech Computer Science and Engineering student focused on learning, building, and exploring technology.' },
 	{ key: 'university', label: 'UNIVERSITY', value: 'REVA University', detail: 'REVA University\nB.Tech - Computer Science and Engineering\nBangalore' },
 	{ key: 'currently', label: 'CURRENTLY', value: '2nd Year', detail: '2nd Year\n2025 - Present' },
 	{ key: 'interests', label: 'INTERESTS', value: 'Web / AI / Build', detail: 'Web Development\nArtificial Intelligence\nProject Development\nProgramming' },
+	{ key: 'education', label: 'EDUCATION', value: 'B.Tech CSE', detail: 'B.Tech - Computer Science and Engineering\nREVA University, Bangalore' },
 ];
 
 export default function About() {
