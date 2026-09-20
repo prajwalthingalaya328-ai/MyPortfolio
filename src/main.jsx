@@ -10,6 +10,7 @@ import './home-mobile.css';
 import './spacing.css';
 import './premium-home.css';
 import './certifications.css';
+import './secondary-pages.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

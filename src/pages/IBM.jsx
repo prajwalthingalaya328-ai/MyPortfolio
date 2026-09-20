@@ -3,7 +3,7 @@ import PageFrame from '../components/PageFrame';
 import { portfolioData } from '../data/portfolioData';
 
 function CertificateOption({ certificate, index }) {
-  return <article className="certificate-option reveal"><div className="option-glyph"><span>IBM</span><strong>SB</strong></div><div className="option-copy"><span className="certificate-issuer">IBM SkillsBuild</span><h2>{certificate.title}</h2><p>{certificate.description}</p></div><a className="certificate-link" data-cursor="OPEN" href={certificate.file} target="_blank" rel="noopener noreferrer">VIEW CERTIFICATE <span>↗</span></a><small className="option-index">0{index + 1}</small></article>;
+  return <article className="certificate-option reveal"><div className="option-glyph"><span>IBM</span><strong>SB</strong></div><div className="option-copy"><span className="certificate-issuer">IBM SkillsBuild</span><h2>Certificate {String(index + 1).padStart(2, '0')}</h2><p>Certificate document available to view.</p></div><a className="certificate-link" data-cursor="OPEN" href={certificate.file} target="_blank" rel="noopener noreferrer">VIEW CERTIFICATE <span>↗</span></a><small className="option-index">0{index + 1}</small></article>;
 }
 
 export default function IBM() {

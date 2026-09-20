@@ -1,6 +1,26 @@
 import { useState } from 'react';
 import PageFrame from '../components/PageFrame';
 import DetailPanel from '../components/DetailPanel';
-import { portfolioData } from '../data/portfolioData';
 
-export default function About() { const [panel, setPanel] = useState(null); const cards = [{ key: 'who', label: 'WHO I AM', value: 'B.Tech CSE student', detail: <>I am Prajwal N Thingalaya, a second-year B.Tech Computer Science and Engineering student at REVA University, Bangalore. I enjoy learning programming, exploring web development and artificial intelligence, and building practical technology projects.</> }, { key: 'university', label: 'UNIVERSITY', value: 'REVA University', detail: <>Currently studying {portfolioData.degree} at {portfolioData.university}.</> }, { key: 'currently', label: 'CURRENTLY', value: '2nd Year', detail: <>Exploring web development, artificial intelligence, project development, and programming while improving one project at a time.</> }]; const selected = cards.find((card) => card.key === panel); return <PageFrame eyebrow="02 / profile" title={<>ABOUT <em>PRAJWAL</em></>} intro="A compact profile. Click a card to reveal the next layer." ><div className="screen-stage about-stage"><div className="about-orbit" aria-hidden="true" /><div className="interactive-card-grid">{cards.map((card, index) => <button className="reveal-card" data-cursor="EXPLORE" key={card.key} onClick={() => setPanel(card.key)}><span>0{index + 1}</span><small>{card.label}</small><strong>{card.value}</strong><i>↗</i></button>)}</div><div className="stage-note">CLICK TO EXPLORE <span>→</span></div></div>{selected && <DetailPanel title={selected.label} eyebrow="Profile detail" onClose={() => setPanel(null)}><p>{selected.detail}</p></DetailPanel>}</PageFrame>; }
+const identityNodes = [
+	{ key: 'who', label: 'WHO I AM', value: 'B.Tech CSE student', detail: 'B.Tech Computer Science and Engineering student focused on learning, building, and exploring technology.' },
+	{ key: 'university', label: 'UNIVERSITY', value: 'REVA University', detail: 'REVA University\nB.Tech - Computer Science and Engineering\nBangalore' },
+	{ key: 'currently', label: 'CURRENTLY', value: '2nd Year', detail: '2nd Year\n2025 - Present' },
+	{ key: 'interests', label: 'INTERESTS', value: 'Web / AI / Build', detail: 'Web Development\nArtificial Intelligence\nProject Development\nProgramming' },
+];
+
+export default function About() {
+	const [selected, setSelected] = useState(null);
+	const active = identityNodes.find((node) => node.key === selected);
+
+	return <PageFrame eyebrow="02 / digital identity" title={<>IDENTITY <em>INTERFACE</em></>} intro="A living profile system. Select a node to reveal the signal behind it.">
+		<section className="identity-stage secondary-stage">
+			<div className="identity-grid-lines" aria-hidden="true" />
+			<div className="identity-orbit orbit-large" aria-hidden="true" /><div className="identity-orbit orbit-small" aria-hidden="true" />
+			<div className="identity-core"><span>IDENTITY / 01</span><strong>PRAJWAL</strong><b>N THINGALAYA</b><small>BUILDING • LEARNING • EXPLORING</small></div>
+			{identityNodes.map((node, index) => <button className={`identity-node identity-node-${index + 1}`} data-cursor="VIEW" key={node.key} onClick={() => setSelected(node.key)}><span>0{index + 1}</span><strong>{node.label}</strong><small>{node.value}</small></button>)}
+			<div className="identity-status"><i /> DIGITAL IDENTITY SCANNER <b>ONLINE</b></div>
+		</section>
+		{active && <DetailPanel title={active.label} eyebrow="Identity signal" onClose={() => setSelected(null)}><p className="preserve-lines">{active.detail}</p></DetailPanel>}
+	</PageFrame>;
+}

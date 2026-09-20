@@ -1,6 +1,20 @@
 import { useState } from 'react';
 import PageFrame from '../components/PageFrame';
 import DetailPanel from '../components/DetailPanel';
-import { portfolioData } from '../data/portfolioData';
 
-export default function Skills() { const [selected, setSelected] = useState(null); const items = [...portfolioData.skills.map((skill) => ({ ...skill, type: 'Programming', detail: `${skill.level} knowledge of ${skill.name} programming fundamentals, with more learning ahead.` })), ...portfolioData.interests.map((name) => ({ name, level: 'Interest', type: 'Exploring', detail: `An active area of curiosity in Prajwal's computer science journey.` }))]; return <PageFrame eyebrow="03 / constellation" title={<>A toolkit in <em>motion.</em></>} intro="Click a node to inspect the current learning signal." ><div className="skill-constellation screen-stage"><div className="skill-core">SKILLS<span>learning / improving</span></div>{items.map((item, index) => <button className={`skill-node node-${index + 1}`} data-cursor="EXPLORE" key={item.name} onClick={() => setSelected(item)}><span>{item.name}</span><small>{item.level}</small></button>)}</div>{selected && <DetailPanel title={selected.name} eyebrow={selected.type} onClose={() => setSelected(null)}><p>{selected.detail}</p>{selected.name === 'C' && <p className="detail-accent">Currently comfortable with C programming fundamentals.</p>}</DetailPanel>}</PageFrame>; }
+const items = [
+	{ name: 'C', level: 'Good', type: 'Programming skill', detail: 'Good knowledge of C.' },
+	{ name: 'PYTHON', level: 'Basic', type: 'Programming skill', detail: 'Basic knowledge of Python.' },
+	{ name: 'WEB', level: 'Interest', type: 'Learning area', detail: 'Web Development.' },
+	{ name: 'AI', level: 'Interest', type: 'Learning area', detail: 'Artificial Intelligence.' },
+	{ name: 'PROJECTS', level: 'Interest', type: 'Learning area', detail: 'Project Development.' },
+	{ name: 'PROGRAMMING', level: 'Interest', type: 'Core interest', detail: 'Programming.' },
+];
+
+export default function Skills() {
+	const [selected, setSelected] = useState(null);
+	return <PageFrame eyebrow="03 / skill network" title={<>SKILL <em>CONSTELLATION</em></>} intro="No invented percentages. Select a signal to inspect the current learning state.">
+		<section className="network-stage secondary-stage"><div className="network-lines" aria-hidden="true" /><div className="network-core"><span>CORE</span><strong>PRAJWAL</strong><small>LEARNING NETWORK</small></div>{items.map((item, index) => <button className={`network-node network-node-${index + 1}`} data-cursor="EXPLORE" key={item.name} onClick={() => setSelected(item)}><span>{item.name}</span><small>{item.level}</small></button>)}</section>
+		{selected && <DetailPanel title={selected.name} eyebrow={selected.type} onClose={() => setSelected(null)}><p>{selected.detail}</p></DetailPanel>}
+	</PageFrame>;
+}

@@ -9,8 +9,8 @@ export const portfolioData = {
   linkedin: 'https://www.linkedin.com/in/prajwal-n-thingalaya/',
   interests: ['Web Development', 'Artificial Intelligence', 'Project Development', 'Programming'],
   skills: [
-    { name: 'C', level: 'Good', value: 72 },
-    { name: 'Python', level: 'Basic', value: 38 },
+    { name: 'C', level: 'Good' },
+    { name: 'Python', level: 'Basic' },
   ],
   project: {
     title: 'IoT-Based Water Quality Monitoring System',
@@ -21,15 +21,11 @@ export const portfolioData = {
   certificateFiles: [
     {
       issuer: 'IBM SkillsBuild',
-      title: 'Python for Data Science',
       file: '/certificates/Python%20certificate%201.pdf',
-      description: 'Completed successfully. Issued/validated through IBM SkillsBuild.',
     },
     {
       issuer: 'IBM SkillsBuild',
-      title: 'Data Analysis with Python',
       file: '/certificates/python%20certificate-2.pdf',
-      description: 'Completed successfully. Issued/validated through IBM SkillsBuild.',
     },
   ],
   career: [
