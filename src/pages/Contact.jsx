@@ -1,14 +1,50 @@
 import { useState } from 'react';
 import PageFrame from '../components/PageFrame';
-import DetailPanel from '../components/DetailPanel';
-import { portfolioData } from '../data/portfolioData';
+
+const contactItems = [
+	{ number: '01', label: 'PHONE', value: '+91 6364642835', href: 'tel:+916364643835', action: 'CALL', icon: 'TEL', copyValue: '+916364643835' },
+	{ number: '02', label: 'EMAIL', value: 'prajwalthingalaya@gmail.com', href: 'mailto:prajwalthingalaya@gmail.com', action: 'SEND EMAIL', icon: '@', copyValue: 'prajwalthingalaya@gmail.com' },
+	{ number: '03', label: 'GITHUB', value: '@prajwalthingalaya328-ai', href: 'https://github.com/prajwalthingalaya328-ai', action: 'VIEW GITHUB', icon: 'GH', external: true },
+	{ number: '04', label: 'LINKEDIN', value: 'Prajwal N Thingalaya', href: 'https://www.linkedin.com/in/prajwal-n-thingalaya/', action: 'VIEW LINKEDIN', icon: 'in', external: true },
+];
+
+function ContactIcon({ children }) {
+	return <span className="contact-directory-icon" aria-hidden="true">{children}</span>;
+}
 
 export default function Contact() {
-	const [open, setOpen] = useState(false);
-	const [status, setStatus] = useState('');
-	const submit = (event) => { event.preventDefault(); setStatus('Your message is ready to be connected to an email service.'); event.currentTarget.reset(); };
-	return <PageFrame eyebrow="09 / connection interface" title={<>CONNECT <em>WITH ME</em></>} intro="Choose a direct channel. External profiles open in a new tab.">
-		<section className="connection-stage secondary-stage"><div className="connection-web" aria-hidden="true" /><div className="connection-core"><span>OPEN CHANNELS</span><strong>CONNECT</strong><small>PRAJWAL N THINGALAYA</small></div><a className="connection-node connection-linkedin" data-cursor="CONNECT" href={portfolioData.linkedin} target="_blank" rel="noreferrer"><span>01</span><strong>LINKEDIN</strong><small>PROFESSIONAL NETWORK</small><b>↗</b></a><a className="connection-node connection-github" data-cursor="CODE" href={portfolioData.github} target="_blank" rel="noreferrer"><span>02</span><strong>GITHUB</strong><small>DEVELOPER PROFILE</small><b>↗</b></a><button className="connection-message" data-cursor="TALK" onClick={() => setOpen(true)}>CONTACT <b>MESSAGE →</b></button></section>
-		{open && <DetailPanel title="Send a message" eyebrow="Contact detail" onClose={() => setOpen(false)}><form className="compact-form" onSubmit={submit}><label>Name<input name="name" required /></label><label>Email<input name="email" type="email" required /></label><label>Message<textarea name="message" required /></label><button className="button button-solid" type="submit">SEND MESSAGE ↗</button><p role="status">{status}</p></form></DetailPanel>}
+	const [copied, setCopied] = useState('');
+	const copy = async (item) => {
+		try {
+			await navigator.clipboard.writeText(item.copyValue);
+			setCopied(item.label);
+			window.setTimeout(() => setCopied(''), 1600);
+		} catch {
+			setCopied('');
+		}
+	};
+
+	return <PageFrame eyebrow="" title="" intro="">
+		<section className="contact-directory">
+			<header className="contact-directory-header reveal">
+				<div className="contact-directory-kicker">CONTACT DIRECTORY / OPEN CHANNELS</div>
+				<h1>LET&apos;S<br /><span>CONNECT.</span></h1>
+				<p>Have a project idea, collaboration opportunity, or simply want to connect? You can reach me through any of the channels below.</p>
+				<div className="contact-directory-status"><span>AVAILABLE FOR</span><strong>PROJECTS <i>•</i> COLLABORATION <i>•</i> CONNECTIONS</strong></div>
+			</header>
+
+			<div className="contact-directory-list" aria-label="Contact directory">
+				{contactItems.map((item) => <div className="contact-directory-row reveal" key={item.label}>
+					<span className="contact-directory-number">{item.number}</span>
+					<ContactIcon>{item.icon}</ContactIcon>
+					<a className="contact-directory-main" href={item.href} {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
+						<span>{item.label}</span><strong>{item.value}</strong>
+					</a>
+					<div className="contact-directory-action"><a href={item.href} {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>{item.action} <span>→</span></a>{item.copyValue && <button type="button" onClick={() => copy(item)}>{copied === item.label ? 'COPIED' : 'COPY'}</button>}</div>
+				</div>)}
+			</div>
+
+			<footer className="contact-directory-footer reveal"><p>Built with curiosity, code and continuous learning.</p><strong>PRAJWAL N THINGALAYA</strong><span>B.Tech CSE <i>•</i> REVA University</span></footer>
+		</section>
 	</PageFrame>;
 }

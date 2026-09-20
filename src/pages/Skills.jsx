@@ -1,44 +1,113 @@
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import PageFrame from '../components/PageFrame';
 
 const systems = [
-  { key: 'c', name: 'C', level: 'GOOD', state: 'ACTIVE', support: ['PROGRAMMING', 'LOGIC', 'PROBLEM SOLVING'], theme: 'structured' },
-  { key: 'python', name: 'PYTHON', level: 'BASIC', state: 'LEARNING', support: ['BUILDING', 'LEARNING', 'EXPERIMENTING'], theme: 'intelligent' },
-  { key: 'web', name: 'WEB DEVELOPMENT', level: 'FOCUS', state: 'EXPLORING', support: ['INTERFACES', 'WEB PROJECTS'], theme: 'interface' },
-  { key: 'ai', name: 'AI', level: 'EXPLORING', state: 'EXPLORING', support: ['ARTIFICIAL INTELLIGENCE'], theme: 'future' },
-  { key: 'projects', name: 'PROJECT DEVELOPMENT', level: 'ACTIVE', state: 'BUILDING', support: ['PROJECT DEVELOPMENT'], theme: 'builder' },
-  { key: 'programming', name: 'PROGRAMMING', level: 'CORE', state: 'ACTIVE', support: ['PROGRAMMING'], theme: 'logic' },
+  {
+    key: 'python',
+    name: 'PYTHON',
+    status: 'BASIC',
+    line: 'PROGRAMMING',
+    detail: 'LEARNING',
+    tags: ['PROGRAMMING', 'LEARNING', 'BUILDING'],
+    position: 'system-python',
+  },
+  {
+    key: 'c',
+    name: 'C',
+    status: 'GOOD',
+    line: 'PROGRAMMING',
+    detail: 'LOGIC',
+    tags: ['PROGRAMMING', 'LOGIC'],
+    position: 'system-c',
+  },
+  {
+    key: 'web',
+    name: 'WEB DEVELOPMENT',
+    status: 'BUILDING',
+    line: 'INTERFACES',
+    detail: 'WEB PROJECTS',
+    tags: ['INTERFACES', 'WEB PROJECTS'],
+    position: 'system-web',
+  },
+  {
+    key: 'ai',
+    name: 'AI',
+    status: 'EXPLORING',
+    line: 'ARTIFICIAL INTELLIGENCE',
+    detail: '',
+    tags: ['AI', 'EXPLORING'],
+    position: 'system-ai',
+  },
+  {
+    key: 'projects',
+    name: 'PROJECT DEVELOPMENT',
+    status: 'BUILDING',
+    line: 'TESTING',
+    detail: '',
+    tags: ['BUILDING', 'TESTING'],
+    position: 'system-projects',
+  },
+  {
+    key: 'programming',
+    name: 'PROGRAMMING',
+    status: 'CORE',
+    line: 'PROGRAMMING',
+    detail: '',
+    tags: ['CORE', 'LOGIC'],
+    position: 'system-programming',
+  },
 ];
 
 export default function Skills() {
-  const [index, setIndex] = useState(0);
-  const [activated, setActivated] = useState(false);
-  const dragStart = useRef(null);
-  const system = systems[index];
-  const select = (nextIndex) => { setIndex((nextIndex + systems.length) % systems.length); setActivated(false); };
+  const [active, setActive] = useState('python');
+  const current = systems.find((system) => system.key === active) ?? systems[0];
 
-  useEffect(() => {
-    const timer = window.setInterval(() => setIndex((current) => (current + 1) % systems.length), 9000);
-    return () => window.clearInterval(timer);
-  }, []);
+  return (
+    <PageFrame eyebrow="" title="" intro="">
+      <section className="technology-lab">
+        <header className="lab-header reveal">
+          <div className="eyebrow">SKILLS</div>
+          <h1>THE PLACE WHERE MY SKILLS ARE TESTED.</h1>
+        </header>
 
-  const onPointerDown = (event) => { dragStart.current = event.clientX; event.currentTarget.setPointerCapture?.(event.pointerId); };
-  const onPointerUp = (event) => {
-    if (dragStart.current === null) return;
-    const distance = event.clientX - dragStart.current;
-    if (Math.abs(distance) > 45) select(index + (distance < 0 ? 1 : -1));
-    dragStart.current = null;
-  };
+        <div className="lab-scene reveal">
+          <div className="lab-grid" aria-hidden="true" />
+          <div className="lab-rings" aria-hidden="true" />
 
-  return <PageFrame eyebrow="SKILLS / 02" title="" intro="">
-    <section className={`skill-arcade theme-${system.theme} ${activated ? 'is-activated' : ''}`} onPointerDown={onPointerDown} onPointerUp={onPointerUp}>
-      <div className="arcade-particles" aria-hidden="true" /><div className="arcade-grid" aria-hidden="true" /><div className="arcade-meta">SELECT A SYSTEM <span>06 / LAB</span></div>
-      <div className="arcade-header"><span>SKILLS</span><small>TECH LAB / INTERACTIVE MODE</small></div>
-      <div className="arcade-machine"><div className="machine-ring ring-back" /><div className="machine-ring ring-front" /><div className="machine-crosshair" /><div className="arcade-selected"><span className="selected-index">0{index + 1} / SYSTEM</span><h2>{system.name}</h2><strong>{system.level}</strong><div className="selected-support">{system.support.map((word) => <span key={word}>{word}</span>)}</div><button className="activate-control" onClick={(event) => { event.stopPropagation(); setActivated(!activated); }}>{activated ? 'DEACTIVATE' : 'ACTIVATE'} <b>↗</b></button></div></div>
-      <div className="arcade-neighbors" aria-label="Select a skill">{systems.map((item, itemIndex) => <button key={item.key} className={`arcade-neighbor neighbor-${itemIndex} ${itemIndex === index ? 'is-current' : ''}`} onClick={(event) => { event.stopPropagation(); select(itemIndex); }}><span>0{itemIndex + 1}</span><strong>{item.name}</strong></button>)}</div>
-      <aside className="arcade-readout"><span>SYSTEM READOUT</span><b>SYSTEM <em>{system.name}</em></b><b>LEVEL <em>{system.level}</em></b><b>STATE <em>{system.state}</em></b><i>DRAG / CLICK / EXPLORE</i></aside>
-      <div className="arcade-controls"><button data-cursor="VIEW" onClick={() => select(index - 1)} aria-label="Previous skill">←</button><span>SWIPE TO SHIFT</span><button data-cursor="VIEW" onClick={() => select(index + 1)} aria-label="Next skill">→</button></div>
-      {activated && <button className="arcade-back" onClick={() => setActivated(false)}>BACK TO SKILLS <b>×</b></button>}
-    </section>
-  </PageFrame>;
+          <div className="lab-display">
+            <div className="lab-core">
+              <span>ACTIVE MODULE</span>
+              <h2>{current.name}</h2>
+              <strong>{current.status}</strong>
+              <p>{current.line}</p>
+              <div className="lab-tags">
+                {current.tags.map((tag) => (
+                  <span key={tag}>{tag}</span>
+                ))}
+              </div>
+            </div>
+
+            {systems.map((system) => (
+              <button
+                key={system.key}
+                type="button"
+                className={`lab-module ${system.position} ${active === system.key ? 'is-selected' : ''}`}
+                onClick={() => setActive(system.key)}
+              >
+                <span>{system.name}</span>
+                <small>{system.detail || system.status}</small>
+              </button>
+            ))}
+          </div>
+
+          <aside className="lab-readout">
+            <span>LAB STATUS</span>
+            <strong>{current.name}</strong>
+            <em>{current.status}</em>
+            <small>{current.line}</small>
+          </aside>
+        </div>
+      </section>
+    </PageFrame>
+  );
 }

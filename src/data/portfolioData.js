@@ -5,6 +5,8 @@ export const portfolioData = {
   university: 'REVA University, Bangalore',
   year: '2nd Year',
   period: '2025 - Present',
+  email: 'prajwalthingalaya328@gmail.com',
+  phone: '6364642835',
   github: 'https://github.com/prajwalthingalaya328-ai',
   linkedin: 'https://www.linkedin.com/in/prajwal-n-thingalaya/',
   interests: ['Web Development', 'Artificial Intelligence', 'Project Development', 'Programming'],
@@ -28,11 +30,6 @@ export const portfolioData = {
       file: '/certificates/python%20certificate-2.pdf',
     },
   ],
-  career: [
-    { title: 'Software Developer', description: 'Building programming and problem-solving skills toward software development.' },
-    { title: 'Full-Stack Developer', description: 'Exploring how complete web applications are designed and developed.' },
-    { title: 'AI/ML Engineer', description: 'Exploring Artificial Intelligence, Machine Learning, and intelligent applications.' },
-  ],
 };
 
 export const routes = [
@@ -42,7 +39,5 @@ export const routes = [
   { path: '/projects', label: 'Projects' },
   { path: '/certifications', label: 'Certifications' },
   { path: '/education', label: 'Education' },
-  { path: '/career', label: 'Career' },
-  { path: '/github', label: 'GitHub' },
   { path: '/contact', label: 'Contact' },
 ];
