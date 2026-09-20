@@ -1,0 +1,317 @@
+/* Home page fixes and professional enhancements */
+
+/* Ensure the hero section has proper height and spacing */
+.home-identity {
+  min-height: calc(100svh - 78px); /* restore intended height */
+  padding: 95px 0 55px; /* consistent with responsive design */
+  box-sizing: border-box;
+}
+
+/* Reduce overlapping of absolute grid field */
+.home-grid-field {
+  opacity: 0.18; /* subtle background */
+  pointer-events: none;
+}
+
+/* Refine typography hierarchy */
+.home-copy h1 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-semibold);
+  letter-spacing: -0.04em;
+}
+.home-copy .home-role,
+.home-copy .home-description {
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+
+/* Hover interactions – smoother */
+.home-explore-grid a {
+  transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 0 4px rgba(114,226,215,0.1);
+}
+.home-explore-grid a:hover {
+  box-shadow: 0 0 12px rgba(114,226,215,0.2);
+}
+
+/* About page alignment and text styling */
+.about-intro {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left; /* keep left‑aligned for readability */
+}
+.about-intro h2 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
+}
+.about-intro p {
+  font-family: var(--font-body);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+.about-intro small {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* Ensure consistent accent usage */
+.about-identity-world .eyebrow,
+.about-identity-world .panel-label,
+.about-status b,
+.about-fragment strong {
+  color: var(--accent-primary);
+}
+
+/* Hide any intro overlay that may cover the hero */
+.home-intro { display: none; }
+
+/* Ensure orbit elements stay behind hero text */
+.orbit-wrap { z-index: 0; }
+
+/* Reinforce hero copy positioning above other layers */
+.home-copy { position: relative; z-index: 5; }
+.home-identity-inner {
+  gap: 40px; /* more breathing room */
+}
+
+/* Remove the background grid that causes overlap */
+.home-grid-field {
+  display: none; /* fully hide to prevent visual clutter */
+}
+
+/* Global typography for inner pages (About, Skills, Projects, etc.) */
+.page-content h1,
+.page-content h2,
+.page-content h3,
+.page-content h4 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.6rem;
+}
+
+.page-content p {
+  font-family: var(--font-body);
+  font-weight: var(--weight-regular);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+/* Accent styling for buttons and links across all pages */
+button,
+a.text-link,
+.home-explore-grid a {
+  color: var(--accent-primary);
+  border-color: var(--accent-primary);
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+button:hover,
+a.text-link:hover,
+.home-explore-grid a:hover {
+  color: var(--accent-secondary);
+  border-color: var(--accent-secondary);
+  background: rgba(255,255,255,0.05);
+  transform: translateY(-2px);
+}
+
+/* Subtle glass‑morphic panels for project cards and info cards */
+.project-card,
+.info-card,
+.visual-panel {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  box-shadow: 0 0 12px var(--glass-glow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.project-card:hover,
+.info-card:hover,
+.visual-panel:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 0 20px var(--glass-glow);
+}
+/* Education page enhancements */
+.academic-journey {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+.education-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.education-header h1 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  font-size: 2.5rem;
+  letter-spacing: -0.04em;
+}
+.education-header .eyebrow {
+  font-family: var(--font-body);
+  font-weight: var(--weight-medium);
+  color: var(--accent-primary);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+.education-meta span {
+  display: inline-block;
+  margin: 0 0.5rem;
+  font-family: var(--font-body);
+  color: var(--muted);
+}
+.timeline-shell {
+  margin-top: 2rem;
+  position: relative;
+}
+.timeline-node {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  margin-bottom: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.timeline-node:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 12px var(--glass-glow);
+}
+.timeline-node strong {
+  color: var(--accent-primary);
+}
+.education-details {
+  margin-top: 2rem;
+}
+.detail-grid > div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+.detail-grid span {
+  font-family: var(--font-body);
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+.detail-grid strong {
+  font-family: var(--font-display);
+  font-weight: var(--weight-semibold);
+}
+.focus-cluster {
+  margin-top: 2rem;
+}
+.focus-label {
+  font-family: var(--font-display);
+  font-weight: var(--weight-medium);
+  margin-bottom: 0.5rem;
+}
+.focus-tags span {
+  display: inline-block;
+  background: var(--accent-primary);
+  color: #fff;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  margin: 0.2rem;
+  font-size: 0.85rem;
+  transition: background 0.2s ease;
+}
+.focus-tags span:hover {
+  background: var(--accent-secondary);
+}
+
+/* Education page enhancements */
+.academic-journey {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+.education-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.education-header h1 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  font-size: 2.5rem;
+  letter-spacing: -0.04em;
+}
+.education-header .eyebrow {
+  font-family: var(--font-body);
+  font-weight: var(--weight-medium);
+  color: var(--accent-primary);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+.education-meta span {
+  display: inline-block;
+  margin: 0 0.5rem;
+  font-family: var(--font-body);
+  color: var(--muted);
+}
+.timeline-shell {
+  margin-top: 2rem;
+  position: relative;
+}
+.timeline-node {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  margin-bottom: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.timeline-node:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 12px var(--glass-glow);
+}
+.timeline-node strong {
+  color: var(--accent-primary);
+}
+.education-details {
+  margin-top: 2rem;
+}
+.detail-grid > div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+.detail-grid span {
+  font-family: var(--font-body);
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+.detail-grid strong {
+  font-family: var(--font-display);
+  font-weight: var(--weight-semibold);
+}
+.focus-cluster {
+  margin-top: 2rem;
+}
+.focus-label {
+  font-family: var(--font-display);
+  font-weight: var(--weight-medium);
+  margin-bottom: 0.5rem;
+}
+.focus-tags span {
+  display: inline-block;
+  background: var(--accent-primary);
+  color: #fff;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  margin: 0.2rem;
+  font-size: 0.85rem;
+  transition: background 0.2s ease;
+}
+.focus-tags span:hover {
+  background: var(--accent-secondary);
+}
+/* Final stacking fixes */
+.home-glow { z-index: -2 !important; }
+.home-scroll { display: none; }
+.orbit-node { z-index: 0 !important; }
+.home-scroll { z-index: 2 !important; }
+.home-identity { z-index: 1; }
