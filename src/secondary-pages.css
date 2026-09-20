@@ -20,3 +20,13 @@
 @media (prefers-reduced-motion: reduce) { .identity-grid-lines, .telemetry-wave i, .terminal-cursor span { animation: none; } }
 .identity-node-5 { top: 50%; right: 5%; transform: translateY(-50%); }.identity-node-5:hover, .identity-node-5:focus-visible { transform: translateY(calc(-50% - 5px)); }
 @media (max-width: 700px) { .identity-node-5 { top: 50%; right: 4%; transform: translateY(-50%); } }
+
+.page-content:not(.page-home) { width: 100%; min-height: 100vh; overflow-x: hidden; }
+.page-content:not(.page-home) .page-frame { width: 100%; min-height: 100vh; height: auto; overflow: visible; padding: 112px 0 56px; }
+.page-content:not(.page-home) .screen-stage { height: auto; min-height: 430px; }
+body:has(.page-content:not(.page-home)) { overflow-x: hidden; }
+
+@media (max-width: 700px) {
+	.page-content:not(.page-home) .page-frame { min-height: 100vh; height: auto; padding: 96px 0 34px; }
+	.page-content:not(.page-home) .screen-stage { height: auto; min-height: 390px; }
+}
